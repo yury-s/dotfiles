@@ -1,0 +1,20 @@
+[user]
+	email = yurys@chromium.org
+	name = Yury Semikhatsky
+[alias]
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
+[http]
+	cookiefile = /home/yurys/.gitcookies
+[core]
+	editor = vim
+[bugzilla]
+	username = yurys@chromium.org
+[cola]
+	spellcheck = false
+[diff]
+	tool = meld
+[merge]
+	conflictstyle = diff3

@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# Find which is your current branch
+if currentBranch=$(git symbolic-ref --short -q HEAD)
+then
+    echo Pushing local branch "$currentBranch" to "origin/$currentBranch"
+    git push --set-upstream origin $currentBranch
+    echo DONE
+else
+    echo ERROR: Cannot find the current branch!
+fi
