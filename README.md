@@ -8,3 +8,11 @@
 - Install [rust](https://www.rust-lang.org/tools/install): `rustup toolchain install stable`
 - Install [ripgrep](https://github.com/BurntSushi/ripgrep): `cargo install ripgrep`
 - Install [brew](https://brew.sh/)
+
+- Install [nvm](https://github.com/nvm-sh/nvm)
+- Install [node](https://nodejs.org/en/): `nvm install stable`
+
+- Install [exa](https://the.exa.website/): `brew install exa`
+- Install [fzf](https://github.com/junegunn/fzf): (install with .git so that it works with vim and bash)
+
+- Install [bash-completion](https://github.com/git/git/blob/master/contrib/completion/git-completion.bash): `brew install bash-completion`
