@@ -141,13 +141,14 @@ function set_command_prompt {
 }
 
 PROMPT_COMMAND=set_command_prompt
+# Sort git branches chronologically
 alias gb="git for-each-ref --sort=-committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"
 
 export PATH=$PATH:$HOME/depot_tools
 alias gm=$HOME/v8/v8/tools/dev/gm.py
 
-export PATH=/home/yurys/.cargo/bin:$PATH
-export PATH=$PATH:/home/yurys/git-scripts
+export PATH=$HOME/.cargo/bin:$PATH
+export PATH=$PATH:$HOME/git-scripts
 
 # to avoid 
 # Gtk-Message: 09:12:38.520: Failed to load module "canberra-gtk-module"
