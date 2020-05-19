@@ -87,15 +87,6 @@ fi
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
@@ -141,8 +132,6 @@ function set_command_prompt {
 }
 
 PROMPT_COMMAND=set_command_prompt
-# Sort git branches chronologically
-alias gb="git for-each-ref --sort=-committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"
 
 export PATH=$PATH:$HOME/depot_tools
 alias gm=$HOME/v8/v8/tools/dev/gm.py
@@ -162,7 +151,6 @@ export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu/gtk-3.0/modules:$LD_LIBRARY_PAT
 export GIO_EXTRA_MODULES=/usr/lib/x86_64-linux-gnu/gio/modules/
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
 
 # Preserve history across terminals
 export HISTCONTROL=ignorespace:ignoredups:erasedups  # no duplicate entries
