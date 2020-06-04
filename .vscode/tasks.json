@@ -1,0 +1,82 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558 
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "WebKit GTK MiniBrowser",
+            "command": "/home/yurys/WebKit/Tools/Scripts/build-webkit",
+            "args": [
+                "--gtk",
+                "--touch-events",
+                "--orientation-events",
+                "--cmakeargs=\"-DCMAKE_BUILD_TYPE=RelWithDebInfo -DCOMBINE_INSPECTOR_RESOURCES=NO -DCOMBINE_TEST_RESOURCES=NO -GNinja -DCMAKE_CXX_COMPILER=/usr/lib/ccache/clang++ -DCMAKE_C_COMPILER=/usr/lib/ccache/clang\"",
+                "MiniBrowser"
+            ],
+            "options": {
+                "env": {
+                    "WEBKIT_JHBUILD": "1",
+                    "WEBKIT_OUTPUTDIR": "/home/yurys/WebKit/WebKitBuild/GTK",
+                    "CXXFLAGS": "-DLOG_DISABLED=0"
+                },
+                "cwd": "/home/yurys/WebKit/WebKitBuild/GTK/Release"
+            },
+            "problemMatcher": {
+                "base": "$gcc",
+                "fileLocation": [
+                    "relative",
+                    "/home/yurys/WebKit/WebKitBuild/GTK/Release"
+                ]
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": true
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "type": "shell",
+            "label": "WebKit WPE MiniBrowser",
+            "command": "./build-webkit",
+            "args": [
+                "--wpe",
+                "--orientation-events",
+                "--touch-events",
+                "--cmakeargs=\"-DLOG_DISABLED=0 -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCOMBINE_INSPECTOR_RESOURCES=NO -DCOMBINE_TEST_RESOURCES=NO -GNinja -DCMAKE_CXX_COMPILER=/usr/lib/ccache/clang++ -DCMAKE_C_COMPILER=/usr/lib/ccache/clang\"",
+                "MiniBrowser"
+            ],
+            "options": {
+                "env": {
+                    "WEBKIT_JHBUILD": "1",
+                    "WEBKIT_OUTPUTDIR": "/home/yurys/WebKit/WebKitBuild/WPE",
+                    "CXXFLAGS": "-DLOG_DISABLED=0"
+                },
+                "cwd": "/home/yurys/WebKit/Tools/Scripts"
+            },
+            "problemMatcher": {
+                "base": "$gcc",
+                "fileLocation": [
+                    "relative",
+                    "/home/yurys/WebKit/WebKitBuild/WPE/Release"
+                ]
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": true
+            },
+            "group": "build"
+        }
+    ]
+}
