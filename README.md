@@ -2,6 +2,15 @@
 - [fzf](https://github.com/junegunn/fzf) for fuzzy-search files in terminal
 - [git bash completions](https://github.com/git/git/blob/master/contrib/completion/git-completion.bash) so that bash would complete branchnames etc on Tab.
 
+#  Linux Setup
+- Some good recommentations from [this article](https://opensource.com/article/20/6/modern-linux-command-line-tools)
+
+```sh
+  sudo apt install tldr htop ncdu jq
+  # fd-find is not available as .deb on Ubuntun 18.04
+  cargo install fd-find
+```
+
 #  MacOS Setup
 - Install [iTerm2](https://www.iterm2.com/)
 - Install [rustup](https://www.rust-lang.org/tools/install)
