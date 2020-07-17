@@ -19,7 +19,7 @@
 - Install [brew](https://brew.sh/)
 
 - Install [nvm](https://github.com/nvm-sh/nvm)
-- Install [node](https://nodejs.org/en/): `nvm install stable`
+- Install [node](https://nodejs.org/en  /): `nvm install stable`
 
 - Install [exa](https://the.exa.website/): `brew install exa`
 - Install [fzf](https://github.com/junegunn/fzf): (install with .git so that it works with vim and bash)

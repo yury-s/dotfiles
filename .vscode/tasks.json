@@ -37,6 +37,37 @@
                 "showReuseMessage": true,
                 "clear": true
             },
+            "group": "build"
+        },
+        {
+            "type": "shell",
+            "label": "ninja GTK",
+            "command": "ninja",
+            "args": [
+                "-C",
+                "/home/yurys/WebKit/WebKitBuild/GTK/Release",
+                "bin/WebKitWebProcess",
+                "bin/WebKitNetworkProcess",
+                "bin/MiniBrowser"
+            ],
+            "options": {
+                "cwd": "/home/yurys/WebKit/WebKitBuild/GTK/Release"
+            },
+            "problemMatcher": {
+                "base": "$gcc",
+                "fileLocation": [
+                    "relative",
+                    "/home/yurys/WebKit/WebKitBuild/GTK/Release"
+                ]
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": true
+            },
             "group": {
                 "kind": "build",
                 "isDefault": true
@@ -60,6 +91,35 @@
                     "CXXFLAGS": "-DLOG_DISABLED=0"
                 },
                 "cwd": "/home/yurys/WebKit/Tools/Scripts"
+            },
+            "problemMatcher": {
+                "base": "$gcc",
+                "fileLocation": [
+                    "relative",
+                    "/home/yurys/WebKit/WebKitBuild/WPE/Release"
+                ]
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": true
+            },
+            "group": "build"
+        },
+        {
+            "type": "shell",
+            "label": "ninja WPE",
+            "command": "ninja",
+            "args": [
+                "-C",
+                "/home/yurys/WebKit/WebKitBuild/WPE/Release",
+                "bin/MiniBrowser"
+            ],
+            "options": {
+                "cwd": "/home/yurys/WebKit/WebKitBuild/WPE/Release"
             },
             "problemMatcher": {
                 "base": "$gcc",
