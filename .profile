@@ -26,7 +26,31 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH=/usr/lib/ccache:$PATH
+export PATH=$PATH:$HOME/depot_tools
+export PATH=$PATH:$HOME/git-scripts
+
+# to avoid
+# Gtk-Message: 09:12:38.520: Failed to load module "canberra-gtk-module"
+# see https://askubuntu.com/questions/208431/failed-to-load-module-canberra-gtk-module
+export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu/gtk-3.0/modules:$LD_LIBRARY_PATH
+# to avoid
+# GLib-GIO-Message: 09:17:03.832: Using the 'memory' GSettings backend.  Your settings will not be saved or shared with other applications.
+# see https://stackoverflow.com/questions/44934641/glib-gio-message-using-the-memory-gsettings-backend-your-settings-will-not-b
+export GIO_EXTRA_MODULES=/usr/lib/x86_64-linux-gnu/gio/modules/
+
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
 
-export PATH="$HOME/.cargo/bin:$PATH"
+# Preserve history across terminals
+export HISTCONTROL=ignorespace:ignoredups:erasedups  # no duplicate entries
+export HISTSIZE=100000                   # big big history
+export HISTFILESIZE=100000               # big big history
+shopt -s histappend                      # append to history, don't overwrite it
+# Save and reload the history after each command finishes
+export PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
+
+
+export INPUTRC=~/.inputrc
+export EDITOR=vim

@@ -10,3 +10,4 @@ alias la='ls -lAh --group-directories-first'
 alias lb='ls -1sSh --group-directories-first --block-size="1K"'
 alias l='ls -1s --group-directories-first'
 
+alias gm=$HOME/v8/v8/tools/dev/gm.py

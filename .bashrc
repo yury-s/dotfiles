@@ -107,10 +107,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-
-export PATH="$PATH:${HOME}/depot_tools"
-export PATH=/usr/lib/ccache:$PATH
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -133,33 +129,4 @@ function set_command_prompt {
 
 PROMPT_COMMAND=set_command_prompt
 
-export PATH=$PATH:$HOME/depot_tools
-alias gm=$HOME/v8/v8/tools/dev/gm.py
-
-export PATH=$HOME/.cargo/bin:$PATH
-export PATH=$PATH:$HOME/git-scripts
-
-# to avoid 
-# Gtk-Message: 09:12:38.520: Failed to load module "canberra-gtk-module"
-# see https://askubuntu.com/questions/208431/failed-to-load-module-canberra-gtk-module
-export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu/gtk-3.0/modules:$LD_LIBRARY_PATH
-
-
-# to avoid 
-# GLib-GIO-Message: 09:17:03.832: Using the 'memory' GSettings backend.  Your settings will not be saved or shared with other applications. 
-# see https://stackoverflow.com/questions/44934641/glib-gio-message-using-the-memory-gsettings-backend-your-settings-will-not-b
-export GIO_EXTRA_MODULES=/usr/lib/x86_64-linux-gnu/gio/modules/
-
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
-# Preserve history across terminals
-export HISTCONTROL=ignorespace:ignoredups:erasedups  # no duplicate entries
-export HISTSIZE=100000                   # big big history
-export HISTFILESIZE=100000               # big big history
-shopt -s histappend                      # append to history, don't overwrite it
-# Save and reload the history after each command finishes
-export PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
-
-
-export INPUTRC=~/.inputrc
-export EDITOR=vim
