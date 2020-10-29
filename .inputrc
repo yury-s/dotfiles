@@ -1,2 +1,7 @@
 "\C-b": shell-backward-word
 "\C-f": shell-forward-word
+"^[[1;5D": backward-word
+"^[[1;5C": forward-word
+
+# Disable beep on tab completion
+set bell-style none
