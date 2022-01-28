@@ -130,3 +130,6 @@ function set_command_prompt {
 PROMPT_COMMAND=set_command_prompt
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# https://github.com/rupa/z
+[ -s ~/bin/z.sh ] && source ~/bin/z.sh
