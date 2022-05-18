@@ -1,10 +1,11 @@
 #!/bin/sh
 
+remote=fork
 # Find which is your current branch
 if currentBranch=$(git symbolic-ref --short -q HEAD)
 then
-    echo Pushing local branch "$currentBranch" to "origin/$currentBranch"
-    git push --set-upstream origin $currentBranch
+    echo Pushing local branch "$currentBranch" to "$remote/$currentBranch"
+    git push --set-upstream $remote $currentBranch
     echo DONE
 else
     echo ERROR: Cannot find the current branch!
