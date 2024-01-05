@@ -11,7 +11,7 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
 # Common ls args
-alias ll='ls -lgGh --group-directories-first'
-alias la='ls -lAh --group-directories-first'
-alias lb='ls -1sSh --group-directories-first --block-size="1K"'
-alias l='ls -1s --group-directories-first'
+alias ll='ls -lgGh'
+alias la='ls -lAh'
+alias lb='ls -1sSh --block-size="1K"'
+alias l='ls -1s'
