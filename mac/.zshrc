@@ -47,6 +47,8 @@ setopt prompt_subst
 # Config for prompt. PS1 synonym.
 prompt='%n:%~$(git_branch_name)$ '
 
+# Use default (emacs) keymap for CTRL+A and CTRL+E etc.
+bindkey -e
 
 # Alias definitions.
 if [ -f ~/.zsh_aliases ]; then
@@ -63,7 +65,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # https://github.com/rupa/z
-[ -s ~/bin/z.sh ] && source ~/bin/z.sh
+[ -s ~/z/z.sh ] && source ~/z/z.sh
 . "$HOME/.cargo/env"
 
 export PATH=/Users/yurys/Library/Python/3.9/bin:$PATH
