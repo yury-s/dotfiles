@@ -1,0 +1,7 @@
+#!/bin/sh
+
+git for-each-ref --format='%(refname:short) %(committerdate:unix)' refs/heads \
+| awk -v cutoff="$(date -d '3 months ago' +%s)" '$2 < cutoff { print $1 }' \
+| grep -vE '^(main|master|develop)$' \
+| xargs -r git branch -D
+
