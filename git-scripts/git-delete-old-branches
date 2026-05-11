@@ -1,7 +1,15 @@
 #!/bin/sh
 
+# Delete local branches whose last commit is older than 1 month.
 git for-each-ref --format='%(refname:short) %(committerdate:unix)' refs/heads \
-| awk -v cutoff="$(date -d '3 months ago' +%s)" '$2 < cutoff { print $1 }' \
+| awk -v cutoff="$(date -v-1m +%s)" '$2 < cutoff { print $1 }' \
 | grep -vE '^(main|master|develop)$' \
 | xargs -r git branch -D
+
+# Delete local branches associated with merged PRs (authored by you).
+gh pr list --state merged --author @me --limit 500 --json headRefName -q '.[].headRefName' \
+| grep -vE '^(main|master|develop)$' \
+| while IFS= read -r branch; do
+    git show-ref --verify --quiet "refs/heads/$branch" && git branch -D "$branch"
+  done
 
